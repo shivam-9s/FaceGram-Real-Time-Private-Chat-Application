@@ -32,7 +32,7 @@ function Chat({ roomId, user }) {
     if (message.trim() !== "") {
       await addDoc(collection(db, "rooms", roomId, "messages"), {
         text: message,
-        sender: user.email,
+        sender: user.name,
         time: new Date().toISOString(),
       });
 
